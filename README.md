@@ -71,7 +71,7 @@ moon = Moon(
 ### Archiving Logs:
 
 ```python
-await moon.archive()
+moon.archive()
 ```
 
 ### Custom Formatting:
@@ -196,4 +196,30 @@ logger = Moon(
 logger.info(
     msg="Custom log message"
 )
+```
+
+- **Archiving a file**:
+
+```python
+from moon.logger import Moon
+from moon.formats import Formats 
+
+# Initialize the Moon logger with a file handler and JsonIndented format
+moon = Moon(
+    name=__name__,
+    log_file="moob.json",
+    file_handler=True,
+    file_format=Formats.JsonIndented()
+)
+
+# Get the base logger from the Moon logger instance
+logger = moon.base_logger()
+
+# Log a custom message with an informational level
+logger.info(
+    msg="Custom log message"
+)
+
+# Archive log file
+moon.archive()
 ```
