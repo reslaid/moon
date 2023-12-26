@@ -21,7 +21,7 @@ The Moon Logger is a Python logging utility with customizable features for handl
 Install the Moon Logger using pip:
 
 ```bash
-pip install moon-logger
+git clone https://github.com/reslaid/moon-logger.git
 ```
 
 ## Usage
