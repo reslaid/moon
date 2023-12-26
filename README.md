@@ -88,3 +88,4 @@ moon.set_log_format("[{name}] - [{levelname}]: {message}")
 - `moon.del_formatter(formatter)`: Remove a specific formatter from the logger.
 - `moon.edit_format(new_log_format)`: Edit the log format, ensuring required placeholders are present.
 - `moon.reset_format()`: Reset the log format to the default.
+- `moon.base_logger()`: Getting the base logger.
