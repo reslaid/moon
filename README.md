@@ -138,7 +138,8 @@ logger.fatal(
 ```
 
 - **Custom log format**:
-- from moon.logger import Moon
+```python
+from moon.logger import Moon
 
 # Define a custom log format string
 custom_log_format = "[{levelname}] [{asctime}] - {message}"
@@ -154,3 +155,4 @@ logger = Moon(
 logger.info(
     msg="Custom log message"
 )
+```
