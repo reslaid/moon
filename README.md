@@ -223,3 +223,78 @@ logger.info(
 # Archive log file
 moon.archive()
 ```
+
+- **Changing Log Format Dynamically**:
+```python
+from moon.logger import Moon
+
+# Create an instance of Moon Logger with a file handler
+logger = Moon(name="dynamic_format_logger", file_handler=True)
+
+# Log an error message
+logger.error(msg="An error occurred.")
+
+# Change the log format
+logger.edit_format("[{levelname}] {message} ({asctime})")
+
+# Log another message with the updated format
+logger.info(msg="Updated log format.")
+```
+
+- **Removing All Formatters**:
+```python
+from moon.logger import Moon
+
+# Create an instance of Moon Logger with a file handler
+logger = Moon(name="remove_all_formatters_logger", file_handler=True)
+
+# Add two formatters
+logger.add_formatter(Moon.formats.CLang())
+logger.add_formatter(Moon.formats.JsonIndented())
+
+# Remove all formatters
+logger.del_formatters()
+
+# Log a message with DEBUG level
+logger.debug(msg="Logging after removing formatters.")
+```
+
+- **Removing a Specific Formatter**:
+```python
+from moon.logger import Moon
+from moon.formats import Formats
+
+# Create an instance of Moon Logger with a file handler
+logger = Moon(name="remove_formatter_logger", file_handler=True)
+
+# Add two formatters
+formatter1 = Formats.Table()
+formatter2 = Formats.Json()
+
+logger.add_formatter(formatter1)
+logger.add_formatter(formatter2)
+
+# Remove one of the formatters
+logger.del_formatter(formatter1)
+
+# Log a message with INFO level
+logger.info(msg="Logging after removing one formatter.")
+```
+
+- **Conditional Logging Based on Environment**:
+```python
+from moon.logger import Moon
+from moon.formats import Formats
+import os
+
+# Create an instance of Moon Logger with conditional file handler
+enable_file_logging = os.environ.get("ENABLE_FILE_LOGGING", "False").lower() == "true"
+logger = Moon(
+    name="conditional_logger",
+    file_handler=enable_file_logging,
+    file_format=Formats.JsonIndented() if enable_file_logging else None
+).base_logger()
+
+# Log a message with INFO level
+logger.info(msg="Conditional log message.")
+```
