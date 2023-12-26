@@ -22,6 +22,7 @@ class Moon:
     ):
         self._name = name
         self._log_file = log_file
+
         self._file_level = file_level
         self._stream_level = stream_level
 
