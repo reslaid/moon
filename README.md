@@ -80,6 +80,24 @@ await moon.archive()
 moon.set_log_format("[{name}] - [{levelname}]: {message}")
 ```
 
+**Formats built into moon logger**:
+- `CLang`
+- `Json`
+- `Csv`
+- `Table`
+- `Html`
+- `Xml`
+- `Markdown`
+- `Yaml`
+- `Syslog`
+- `JsonIndented`
+- `Logstash`
+- `ShortJson`
+- `ColoredConsole`
+- `DelimiterSeparatedJson`
+- `Traceback`
+- `TracebackV2`
+
 ### Logger Methods:
 
 - `moon.set_formatter(formatter)`: Set a custom formatter for the logger.
