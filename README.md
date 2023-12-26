@@ -139,10 +139,13 @@ logger.fatal(
 
 - **Custom log format**:
 ```python
-from moon.logger import Moon
+from moon.logger import Moon, logging
 
 # Define a custom log format string
-custom_log_format = "[{levelname}] [{asctime}] - {message}"
+custom_log_format = logging.Formatter(
+    "[{levelname}] [{asctime}] - {message}",
+    style="{"
+)
 
 # Initialize the Moon logger with the custom log format
 logger = Moon(
