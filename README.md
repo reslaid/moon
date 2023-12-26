@@ -58,17 +58,17 @@ moon = Moon(
 
 ### Handlers
 
-**Adding Stream Handler**:
-
-```python
-moon.add_stream_handler()
-```
-
-**Adding File Handler**:
-
-```python
-moon.add_file_handler()
-```
+  **Adding Stream Handler**:
+  
+  ```python
+  moon.add_stream_handler()
+  ```
+  
+  **Adding File Handler**:
+  
+  ```python
+  moon.add_file_handler()
+  ```
 
 **Archiving Logs**:
 
