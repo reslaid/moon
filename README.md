@@ -177,3 +177,23 @@ logger.info(
     msg="Custom log message"
 )
 ```
+
+- **Built-in log format**:
+
+```python
+from moon.logger import Moon
+from moon.formats import Formats 
+
+
+# Initialize the Moon logger with the built-in log format
+logger = Moon(
+    name=__name__,
+    file_handler=False,
+    stream_format=Formats.CLang() # You can choose any built-in log format
+).base_logger()
+
+# Log a message using the built-in log format
+logger.info(
+    msg="Custom log message"
+)
+```
