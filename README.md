@@ -58,13 +58,13 @@ moon = Moon(
 
 ### Handlers
 
-  **Adding Stream Handler**:
+-  **Adding Stream Handler**:
   
   ```python
   moon.add_stream_handler()
   ```
   
-  **Adding File Handler**:
+-  **Adding File Handler**:
   
   ```python
   moon.add_file_handler()
