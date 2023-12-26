@@ -92,4 +92,46 @@ moon.set_log_format("[{name}] - [{levelname}]: {message}")
 
 ## Examples
 
-- **Comming soon..**
+## Logging Message:
+
+```python
+# Import the Moon logger and Formats module
+from moon.logger import Moon
+from moon.formats import Formats
+
+# Initialize the Moon logger
+logger = Moon(
+    name=__name__,
+    file_handler=False,  # Disable file handler
+    stream_format=Formats.CLang()  # Use CLang format for stream handler
+).base_logger()
+
+# Log a debug message
+logger.debug(
+    msg="message"
+)
+
+# Log an informational message
+logger.info(
+    msg="message"
+)
+
+# Log a warning message
+logger.warning(
+    msg="message"
+)
+
+# Log an error message
+logger.error(
+    msg="message"
+)
+
+# Log a critical message
+logger.critical(
+    msg="message"
+)
+
+# Log a fatal message
+logger.fatal(
+    msg="message"
+)```
