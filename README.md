@@ -68,7 +68,7 @@ moon = Moon(
   moon.add_file_handler()
   ```
 
-## Archiving Logs:
+### Archiving Logs:
 
 ```python
 await moon.archive()
