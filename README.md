@@ -13,8 +13,6 @@ The Moon Logger is a Python logging utility with customizable features for handl
   - [Custom Formatting](#custom-formatting)
   - [Logger Methods](#logger-methods)
 - [Examples](#examples)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
@@ -76,13 +74,13 @@ moon = Moon(
 await moon.archive()
 ```
 
-**Custom Formatting**:
+### Custom Formatting:
 
 ```python
 moon.set_log_format("[{name}] - [{levelname}]: {message}")
 ```
 
--  **Logger Methods**:
+###Logger Methods:
 
 - `moon.set_formatter(formatter)`: Set a custom formatter for the logger.
 - `moon.add_formatter(formatter)`: Add a formatter to the logger.
