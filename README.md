@@ -29,7 +29,9 @@ git clone https://github.com/reslaid/moon-logger.git
 ### Initializing Moon
 
 ```python
-from moon_logger import Moon, LogLevel
+from moon.logger import Moon
+from moon.formats import Formats
+from moon._types import LogLevel
 
 moon = Moon(
     name='my_logger',
