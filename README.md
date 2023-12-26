@@ -75,3 +75,18 @@ moon = Moon(
 ```python
 await moon.archive()
 ```
+
+**Custom Formatting**:
+
+```python
+moon.set_log_format("[{name}] - [{levelname}]: {message}")
+```
+
+-  **Logger Methods**:
+
+- `moon.set_formatter(formatter)`: Set a custom formatter for the logger.
+- `moon.add_formatter(formatter)`: Add a formatter to the logger.
+- `moon.del_formatters()`: Remove all formatters from the logger.
+- `moon.del_formatter(formatter)`: Remove a specific formatter from the logger.
+- `moon.edit_format(new_log_format)`: Edit the log format, ensuring required placeholders are present.
+- `moon.reset_format()`: Reset the log format to the default.
