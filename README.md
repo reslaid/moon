@@ -89,3 +89,7 @@ moon.set_log_format("[{name}] - [{levelname}]: {message}")
 - `moon.edit_format(new_log_format)`: Edit the log format, ensuring required placeholders are present.
 - `moon.reset_format()`: Reset the log format to the default.
 - `moon.base_logger()`: Getting the base logger.
+
+## Examples
+
+- **Comming soon..**
