@@ -191,17 +191,6 @@ class Formats:
         def format(self, record):
             formatted_record = super().format(record)
             record.message = f"{record.levelname}: {record.getMessage()}" 
-
-            frames = traceback.extract_tb(record.stack_info)
-            frames = frames[-self.context:]
-
-            frames_str = ""
-            for frame in frames:
-                filename, lineno, function, code = frame
-                frames_str += f"    at {filename}:{lineno} in {function}"
-
-
-            formatted_record = formatted_record + f"\n{frames_str}"
             return formatted_record
         
     class TracebackV2(logging.Formatter):
