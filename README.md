@@ -21,7 +21,7 @@ The Moon Logger is a Python logging utility with customizable features for handl
 Install the Moon Logger using pip:
 
 ```bash
-git clone https://github.com/reslaid/moon-logger.git
+git clone https://github.com/reslaid/moon.git
 ```
 
 ## Usage
@@ -34,13 +34,15 @@ from moon.formats import Formats
 from moon._types import LogLevel
 
 moon = Moon(
-    name='my_logger',
-    log_file='moon.log',
+    name=__name__,
+    log_file='moon.json',
     stream_handler=True,
     file_handler=True,
     disabled=False,
     stream_level=LogLevel.DEBUG,
-    file_level=LogLevel.DEBUG
+    file_level=LogLevel.DEBUG,
+    stream_format=Formats.CLang(),
+    file_format=Formats.JsonIndented()
 )
 ```
 
