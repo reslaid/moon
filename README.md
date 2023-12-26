@@ -50,7 +50,7 @@ moon = Moon(
 
 The Moon Logger supports the following log levels:
 
-- LogLevel.DEBUG
+- `LogLevel.DEBUG`
 - LogLevel.INFO
 - LogLevel.WARNING
 - LogLevel.ERROR
