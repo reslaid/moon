@@ -230,7 +230,6 @@ from moon.logger import Moon
 
 # Create an instance of Moon Logger with a file handler
 moon = Moon(name="dynamic_format_logger", file_handler=True)
-
 logger = moon.base_logger()
 
 # Log an error message
@@ -248,14 +247,15 @@ logger.info(msg="Updated log format.")
 from moon.logger import Moon
 
 # Create an instance of Moon Logger with a file handler
-logger = Moon(name="remove_all_formatters_logger", file_handler=True)
+moon = Moon(name="remove_all_formatters_logger", file_handler=True)
+logger = moon.base_logger()
 
 # Add two formatters
-logger.add_formatter(Moon.formats.CLang())
-logger.add_formatter(Moon.formats.JsonIndented())
+moon.add_formatter(Moon.formats.CLang())
+moon.add_formatter(Moon.formats.JsonIndented())
 
 # Remove all formatters
-logger.del_formatters()
+moon.del_formatters()
 
 # Log a message with DEBUG level
 logger.debug(msg="Logging after removing formatters.")
@@ -267,17 +267,18 @@ from moon.logger import Moon
 from moon.formats import Formats
 
 # Create an instance of Moon Logger with a file handler
-logger = Moon(name="remove_formatter_logger", file_handler=True)
+moon = Moon(name="remove_formatter_logger", file_handler=True)
+logger = moon.base_logger()
 
 # Add two formatters
 formatter1 = Formats.Table()
 formatter2 = Formats.Json()
 
-logger.add_formatter(formatter1)
-logger.add_formatter(formatter2)
+moon.add_formatter(formatter1)
+moon.add_formatter(formatter2)
 
 # Remove one of the formatters
-logger.del_formatter(formatter1)
+moon.del_formatter(formatter1)
 
 # Log a message with INFO level
 logger.info(msg="Logging after removing one formatter.")
