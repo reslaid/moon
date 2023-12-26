@@ -92,7 +92,7 @@ moon.set_log_format("[{name}] - [{levelname}]: {message}")
 
 ## Examples
 
-## Logging Message:
+- **Logging Message**:
 
 ```python
 # Import the Moon logger and Formats module
