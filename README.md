@@ -295,7 +295,7 @@ enable_file_logging = os.environ.get("ENABLE_FILE_LOGGING", "False").lower() == 
 logger = Moon(
     name="conditional_logger",
     file_handler=enable_file_logging,
-    file_format=Formats.JsonIndented() if enable_file_logging else None
+    file_format=Formats.JsonIndented()
 ).base_logger()
 
 # Log a message with INFO level
