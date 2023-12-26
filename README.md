@@ -229,13 +229,15 @@ moon.archive()
 from moon.logger import Moon
 
 # Create an instance of Moon Logger with a file handler
-logger = Moon(name="dynamic_format_logger", file_handler=True)
+moon = Moon(name="dynamic_format_logger", file_handler=True)
+
+logger = moon.base_logger()
 
 # Log an error message
 logger.error(msg="An error occurred.")
 
 # Change the log format
-logger.edit_format("[{levelname}] {message} ({asctime})")
+moon.edit_format("[{levelname}] {message} ({asctime})")
 
 # Log another message with the updated format
 logger.info(msg="Updated log format.")
