@@ -4,6 +4,7 @@ import logging
 import os
 import inspect
 import zipfile
+import asyncio
 import aiofiles
 
 
@@ -56,19 +57,20 @@ class Moon:
     async def archive(self):
         archive_path = f"{self._log_file}.zip"
 
-        async with aiofiles.open(self._log_file, 'rb') as file:
-            async with aiofiles.open(archive_path, 'wb') as zipf:
-                async with zipfile.ZipFile(zipf, 'w') as zip_file:
-                    zip_file.writestr(
-                        os.path.basename(
-                            self._log_file
-                        ),
-                        await file.read()
-                    )
+        with open(self._log_file, 'rb') as file:
+           self._zip_log(archive_path, file)
 
         os.remove(self._log_file)
 
         return self
+
+    def _zip_log(self, archive_path, file):
+        with open(archive_path, 'wb') as zipf:
+            with zipfile.ZipFile(zipf, 'w') as zip_file:
+                zip_file.writestr(
+                    os.path.basename(self._log_file),
+                    file.read()
+                )
 
     def set_log_format(self, log_format):
         self._default_formatter = logging.Formatter(log_format, style='{')
