@@ -41,5 +41,6 @@ moon = Moon(
     disabled=False,
     stream_level=LogLevel.DEBUG,
     file_level=LogLevel.DEBUG
-)```
+)
+```
 
