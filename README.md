@@ -46,3 +46,27 @@ moon = Moon(
 )
 ```
 
+### Log Levels
+
+The Moon Logger supports the following log levels:
+
+- LogLevel.DEBUG
+- LogLevel.INFO
+- LogLevel.WARNING
+- LogLevel.ERROR
+- LogLevel.CRITICAL
+
+Handlers
+
+Adding Stream Handler
+
+moon.add_stream_handler()
+
+Adding File Handler
+
+moon.add_file_handler()
+
+Archiving Logs
+
+await moon.archive()
+
