@@ -134,4 +134,5 @@ logger.critical(
 # Log a fatal message
 logger.fatal(
     msg="message"
-)```
+)
+```
