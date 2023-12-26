@@ -207,7 +207,7 @@ from moon.formats import Formats
 # Initialize the Moon logger with a file handler and JsonIndented format
 moon = Moon(
     name=__name__,
-    log_file="moob.json",
+    log_file="moon.json",
     file_handler=True,
     file_format=Formats.JsonIndented()
 )
