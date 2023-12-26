@@ -54,7 +54,7 @@ class Moon:
         file_handler.setFormatter(self._file_format)
         self._logger.addHandler(file_handler)
 
-    async def archive(self):
+    def archive(self):
         archive_path = f"{self._log_file}.zip"
 
         with open(self._log_file, 'rb') as file:
