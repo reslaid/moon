@@ -80,7 +80,7 @@ await moon.archive()
 moon.set_log_format("[{name}] - [{levelname}]: {message}")
 ```
 
-###Logger Methods:
+### Logger Methods:
 
 - `moon.set_formatter(formatter)`: Set a custom formatter for the logger.
 - `moon.add_formatter(formatter)`: Add a formatter to the logger.
