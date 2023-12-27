@@ -2,10 +2,7 @@ from ._types import LogLevel
 
 import logging
 import os
-import inspect
 import zipfile
-import asyncio
-import aiofiles
 
 
 class Moon:
@@ -58,7 +55,7 @@ class Moon:
         archive_path = f"{self._log_file}.zip"
 
         with open(self._log_file, 'rb') as file:
-           self._zip_log(archive_path, file)
+            self._zip_log(archive_path, file)
 
         os.remove(self._log_file)
 
