@@ -182,19 +182,29 @@ class Formats:
                 'message': record.getMessage()
             }
             return json.dumps(log_data, separators=(',', ':'))
-        
+
     class Traceback(logging.Formatter):
-        def __init__(self, fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt=None, context=3):
+        def __init__(
+                self,
+                fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                datefmt=None,
+                context=3
+        ):
             super().__init__(fmt, datefmt)
             self.context = context
 
         def format(self, record):
             formatted_record = super().format(record)
-            record.message = f"{record.levelname}: {record.getMessage()}" 
+            record.message = f"{record.levelname}: {record.getMessage()}"
             return formatted_record
-        
+
     class TracebackV2(logging.Formatter):
-        def __init__(self, fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s", datefmt=None, context=3):
+        def __init__(
+                self,
+                fmt="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+                datefmt=None,
+                context=3
+        ):
             super().__init__(fmt, datefmt)
             self.context = context
 
@@ -206,7 +216,10 @@ class Formats:
             frames = frames[-self.context:]
 
             frames_str = ""
-            frames_str += f"\n    at {record.filename}:{record.lineno} in {record.funcName}\n"
+            frames_str += (
+                "\n    at "
+                f"{record.filename}:{record.lineno} in {record.funcName}\n"
+            )
 
             formatted_record += frames_str
             return formatted_record
